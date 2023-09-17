@@ -106,28 +106,6 @@ if x_feature and y_feature:
     st.pyplot()
 
 
-# Pairplot
-if select_numerical_features:
-    def create_pairplot(data):
-        pairplot = sns.pairplot(data[filtered_features + ['Cover_Type']], hue='Cover_Type', palette='viridis')
-        return pairplot
-
-    st.header("Pairplot")
-    pairplot = create_pairplot(data)
-    plt.show()
-    st.pyplot(pairplot)
-
-else:
-    st.header("Pairplot")
-    pairplot = sns.pairplot(data[filtered_features + ['Cover_Type']], hue='Cover_Type', palette='viridis')
-    plt.show()
-    st.pyplot()
-
-st.write("Relations between variables: We also plotted the relations between some features with the colours on the "
-"graph representing the different cover types. For example, from the plot of  Elevation vs "
-"Vertical Distance to Hydrology and Elevation vs Horizontal Distance to Hydrology, we can see that it reveals "
-"a pattern that can be better captured by creating a new feature by subtracting one feature from another.")
-
 # Violin Plot
 st.header("Violin Plot")
 
