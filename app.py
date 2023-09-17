@@ -3,13 +3,16 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os 
 
 
-DATA_URL = ('/Users/harshitshangari/Downloads/train.csv')
+absolute_path = os.path.dirname(__file__)
+relative_path = "train_data/train.csv"
+full_path = os.path.join(absolute_path, relative_path)
 
 @st.cache_data
 def load_data():
-    data = pd.read_csv(DATA_URL, index_col=0)
+    data = pd.read_csv(full_path, index_col=0)
     return data
 
 data = load_data()
