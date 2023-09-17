@@ -38,7 +38,7 @@ st.title("Forest Cover Type Prediction Exploratory Data Analysis")
 st.write("The goal of this project is to predict the forest cover type (a categorical variable) from various geographic information. "
          "Through this streamlit app, we will be performing an exploratory data analysis of this dataset")
 
-if st.checkbox('Show raw data'):
+if st.checkbox('Show raw data', value=True):
     st.subheader('Raw data')
     st.write(data)
 
