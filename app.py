@@ -113,11 +113,13 @@ if select_numerical_features:
 
     st.header("Pairplot")
     pairplot = create_pairplot(data)
+    plt.show()
     st.pyplot(pairplot)
 
 else:
     st.header("Pairplot")
     pairplot = sns.pairplot(data[filtered_features + ['Cover_Type']], hue='Cover_Type', palette='viridis')
+    plt.show()
     st.pyplot()
 
 st.write("Relations between variables: We also plotted the relations between some features with the colours on the "
