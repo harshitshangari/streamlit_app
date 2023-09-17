@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import seaborn as sns
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import os 
 
@@ -106,7 +108,6 @@ if x_feature and y_feature:
 
 # Pairplot
 if select_numerical_features:
-    @st.cache_data
     def create_pairplot(data):
         pairplot = sns.pairplot(data[filtered_features + ['Cover_Type']], hue='Cover_Type', palette='viridis')
         return pairplot
